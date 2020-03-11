@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "postcss css/app.css -o build/app.css"
+    "build": "postcss css/app.css -o build/css/app.css"
   },
   "keywords": [],
   "author": "",

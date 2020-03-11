@@ -3,3 +3,11 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.bg-orange-custom{
+    background-color: #FF931E;
+}
+
+.border-item{
+    @apply border bg-gray-100 mb-1;
+}
