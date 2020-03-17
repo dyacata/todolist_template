@@ -13956,6 +13956,14 @@ video {
   margin-bottom: 0.25rem;
 }
 
+img{
+  display: block;
+  max-width: 100%;
+  height:auto;
+  min-width: 300px;
+  min-height: 125px;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

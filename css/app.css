@@ -11,3 +11,11 @@
 .border-item{
     @apply border bg-gray-100 mb-1;
 }
+
+img{
+    display: block;
+    max-width: 100%;
+    height:auto;
+    min-width: 300px;
+    min-height: 125px;
+}

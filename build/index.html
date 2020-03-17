@@ -12,519 +12,633 @@
         </style>
     </noscript>
     <style>
-        #simplebarId{
+        #simplebarId {
             overflow-y: scroll;
             overflow-x: hidden;
             max-height: 500px;
+            width: 102%;
+        }
+
+        .cls-1 {
+            fill: none;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+
+        .cls-1, .cls-2 {
+            stroke-miterlimit: 10;
+        }
+
+        .cls-2 {
+            stroke: red;
+            fill: url(#Summer);
+        }
+
+        body{
+            width: 100%;
+            margin-right: 20px;
+            overflow: hidden;
         }
     </style>
     <title>My TodoList</title>
 </head>
 <body>
-<nav class="flex items-center justify-between flex-wrap bg-orange-custom p-6">
+<nav class="flex items-center justify-between flex-wrap bg-orange-custom p-6 pb-0">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-xl tracking-tight">
-            <svg  class="" viewBox="0 0 390.49 162.13">
-                <defs>
-                    <style>.cls-1{fill:none;stroke:#000;stroke-width:2px;}.cls-1,.cls-2{stroke-miterlimit:10;}.cls-2{stroke:red;fill:url(#Summer);}</style>
-                    <radialGradient id="Summer" cx="195.25" cy="81.07" r="149.03" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#fff"/><stop offset="0.09" stop-color="#ffedd8"/>
-                        <stop offset="0.21" stop-color="#ffd5a7"/><stop offset="0.33" stop-color="#ffc17d"/>
-                        <stop offset="0.46" stop-color="#ffb05b"/><stop offset="0.59" stop-color="#ffa340"/>
-                        <stop offset="0.72" stop-color="#ff9a2d"/><stop offset="0.86" stop-color="#ff9522"/>
-                        <stop offset="1" stop-color="#ff931e"/>
-                    </radialGradient>
-                </defs>
-                <title>Asset 2</title>
-                <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1">
-                        <path class="cls-1" d="M73,90.75c0-6.58,0-12.87.2-16.23H73C71.66,79,64.84,95.59,60.57,106.2H58C54.81,98,47.75,79.56,46.22,74.47h-.1c.24,3.84.34,11.67.34,17.43v14.3h-2.6V72.6h3.89C52.36,84.12,58.17,99.19,59.42,103h.09c.77-2.45,7.49-19.21,12.2-30.39h3.84v33.6H73Z"/>
-                        <path class="cls-1" d="M92.73,106.2V93.58a1.7,1.7,0,0,0-.19-.77l-12-20.21h3c3.36,5.71,9.22,15.65,10.66,18.15,1.44-2.5,7.34-12.34,10.94-18.15H108L95.51,93a1.56,1.56,0,0,0-.14.72V106.2Z"/>
-                        <path class="cls-1" d="M132,75H120.76V72.6H146V75H134.68v31.2H132Z"/>
-                        <path class="cls-1" d="M178.31,89.16c0,9.17-4.89,17.52-15.26,17.52-9.46,0-15-7.63-15-17.28s5.33-17.28,15.31-17.28C172.6,72.12,178.31,79.37,178.31,89.16Zm-27.46.1c0,7.73,4.28,15,12.34,15,8.69,0,12.34-7.1,12.34-15.07s-4.13-14.69-12.24-14.69C154.65,74.52,150.85,81.67,150.85,89.26Z"/>
-                        <path class="cls-1" d="M185.7,72.6h11.14c9.22,0,15.6,6.43,15.6,16.51s-6.24,17.09-15.65,17.09H185.7Zm2.59,31.2h8.12c8.88,0,13.25-6.24,13.25-14.54,0-7.4-3.94-14.26-13.25-14.26h-8.12Z"/>
-                        <path class="cls-1" d="M248.06,89.16c0,9.17-4.9,17.52-15.27,17.52-9.46,0-15-7.63-15-17.28s5.33-17.28,15.32-17.28C242.34,72.12,248.06,79.37,248.06,89.16Zm-27.46.1c0,7.73,4.27,15,12.34,15,8.68,0,12.33-7.1,12.33-15.07S241.14,74.52,233,74.52C224.39,74.52,220.6,81.67,220.6,89.26Z"/>
-                        <path class="cls-1" d="M255.45,72.6H258v31.2h18l-.48,2.4H255.45Z"/>
-                        <path class="cls-1" d="M283.86,72.6v33.6h-2.59V72.6Z"/>
-                        <path class="cls-1" d="M293.51,97.18c1,4.46,4,7.1,9.5,7.1,6.15,0,8.5-3.07,8.5-6.72s-1.68-6.14-9.07-8c-7.11-1.77-10.18-4.08-10.18-8.93,0-4.41,3.22-8.54,10.42-8.54,7.39,0,10.51,4.51,10.94,8.59h-2.68c-.77-3.6-3.13-6.19-8.41-6.19-4.84,0-7.48,2.26-7.48,6s2.2,5.14,8.4,6.67c9.45,2.36,10.85,6.15,10.85,10.18,0,4.94-3.61,9.22-11.38,9.22-8.4,0-11.47-4.9-12.1-9.41Z"/>
-                        <path class="cls-1" d="M328.31,75H317V72.6h25.25V75H331v31.2h-2.64Z"/>
-                        <path class="cls-2" d="M64.3,139c-11.93.58-25.43-3.92-34-13C11.79,106.36,20,69.17,34.23,46.9,57.1,11.15,101.51,4.51,101.3,4s-60.56,6.6-87,52c-15.13,26-21,67.45-1,85s58.25,10.86,79,2c9.1-3.89,14.83-8.19,26-9,18.69-1.36,28.83,8.79,42,14,36.28,14.33,58-23.67,104-20,43,3.42,52.54,38.78,77,33,35-8.28,65.6-92.57,38-132C324.86-48.78,50.64,57.45,50.3,56c-.22-1,122.9-20.67,188-36,0,0,23.55-5.55,56-5,31.78.53,42.09,6.52,47,10,16.3,11.53,21.2,29.41,23,36,5.35,19.5,5.85,53.69-12,65-24.53,15.54-57.71-28.65-105-14-9.66,3-12.5,6.14-33,13-24.5,8.19-36.8,12.63-50,11-26.78-3.32-29.61-22-50-21C92.55,116.12,88.68,137.8,64.3,139Z"/>
-                    </g>
-                </g>
-            </svg>
-        </span>
+        <div class="font-semibold text-xl tracking-tight">
+            <img src="img/logo.svg" alt="logo">
+        </div>
+    </div>
+    <div class="relative w-full bottom-0 right-0 left-0 m-0 m-auto font-bold p-0">
+        <span class="w-4/12 pt-4 inline-block"></span>
+        <span class="w-4/12 pt-4 inline-block lg:text-left">Tasklist(32)</span>
+        <span class="w-3/12 pt-4 inline-block lg:text-right mr-0 pr-0">Done(0)</span>
     </div>
 </nav>
-    <div class="flex">
-        <div class="w-2/6 h-12">
-            <div class="md:flex md:items-center mb-6">
-                <form class="mx-auto">
-                    <div class="flex flex-wrap -mx-3 mb-2 mt-8">
-                        <div class="w-full md:w-full px-3 mb-6 md:mb-0">
-                            <label class="block capitalize tracking-wide text-gray-800 text-md font-bold mb-2" for="grid-first-name">
-                                Title
-                            </label>
-                            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" type="text" placeholder="John Doe">
-                            <p class="text-red-500 text-xs hidden italic">Please fill out this field.</p>
-                        </div>
+<div class="flex">
+    <div class="w-2/6 h-12">
+        <div class="md:flex md:items-center mb-6">
+            <form class="mx-auto">
+                <div class="flex flex-wrap -mx-3 mb-2 mt-8">
+                    <div class="w-full md:w-full px-3 mb-6 md:mb-0">
+                        <label class="block capitalize tracking-wide text-gray-800 text-md font-bold mb-2"
+                               for="grid-first-name">
+                            Title
+                        </label>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                               id="grid-first-name" type="text" placeholder="John Doe">
+                        <p class="text-red-500 text-xs hidden italic">Please fill out this field.</p>
                     </div>
-                    <div class="flex flex-wrap -mx-3 mb-2">
-                        <div class="w-full md:w-full px-3">
-                            <label class="block capitalize tracking-wide text-gray-800 text-md font-bold mb-2" for="grid-password">
-                                Description
-                            </label>
-                            <textarea rows="5" class="appearance-none block w-full bg-gray-200 text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="Entrez votre description">
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-2">
+                    <div class="w-full md:w-full px-3">
+                        <label class="block capitalize tracking-wide text-gray-800 text-md font-bold mb-2"
+                               for="grid-password">
+                            Description
+                        </label>
+                        <textarea rows="5"
+                                  class="appearance-none block w-full bg-gray-200 text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                  id="grid-password" type="password" placeholder="Entrez votre description">
                 </textarea>
-                            <p class="text-gray-600 text-xs hidden italic">Make it as long and as crazy as you'd like</p>
-                        </div>
-                    </div>
-                    <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
-                        <span>Add task</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-        <div class="w-4/6 pt-4">
-            <div  data-simplebar id="simplebarId">
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-                <li class="border-item flex">
-                    <div class="justify-center">
-                        <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
-                    </div>
-                    <div class="inline-block flex-1 justify-start text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
-                    </div>
-                    <div class="justify-start text-justify pr-2 pl-2">
-                        <a href="#" class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
-                        <a href="#" class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
-                    </div>
-                </li>
-            </div>
+                        <p class="text-gray-600 text-xs hidden italic">Make it as long and as crazy as you'd like</p>
+                    </div>
+                </div>
+                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+                        type="submit">
+                    <span>Add task</span>
+                </button>
+            </form>
         </div>
     </div>
+    <div class="w-4/6 pt-4">
+        <div data-simplebar id="simplebarId">
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+            <li class="border-item flex">
+                <div class="justify-center">
+                    <input type="checkbox" class="inline-flex h-6 w-6 mr-2 ml-2 mt-2">
+                </div>
+                <div class="inline-block flex-1 justify-start text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf
+                    deionbit, consectetur adipisicing elit. Architecto eveniet facilis hic id,devienf deionbit
+                </div>
+                <div class="justify-start text-justify pr-2 pl-2">
+                    <a href="#"
+                       class="text-md pr-2 pl-2 bg-red-100  inline-flex hover:text-red-500 text-red-700 border rounded underline">delete</a>
+                    <a href="#"
+                       class="text-md mt-1 pl-2 bg-blue-100 pr-2 inline-flex hover:text-blue-300 border rounded  rounded text-blue-700 underline">edit</a>
+                </div>
+            </li>
+        </div>
+    </div>
+</div>
 
 <script src="js/simplebar.min.js"></script>
 <script type="text/javascript">
-    new SimpleBar(document.getElementById('simplebarId'), { autoHide: false});
+    new SimpleBar(document.getElementById('simplebarId'), {autoHide: false});
 </script>
 </body>
 </html>
